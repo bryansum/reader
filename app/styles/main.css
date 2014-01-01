@@ -11,3 +11,30 @@ body {
     font-family: "Menlo", monospace;
     font-size: 12px;
 }
+
+/* ----------- File navigation --------------- */
+#prjtree {
+    float: left;
+    width: 200px;
+    overflow: scroll;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    list-style-type: none;
+}
+#prjtree li {
+    margin: 5px 0 5px 0;
+}
+
+#filetree {
+    float: left;
+    width: 200px;
+    overflow: scroll;
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    list-style-type: none;
+}
+#filetree li {
+    margin: 5px 0 5px 0;
+}
