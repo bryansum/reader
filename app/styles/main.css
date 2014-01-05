@@ -5,11 +5,13 @@ body {
 }
 
 .CodeMirror {
+    font-family: "Menlo", monospace;
+    font-size: 11px;
     height: auto;
 }
-.CodeMirror {
-    font-family: "Menlo", monospace;
-    font-size: 12px;
+.CodeMirror-scroll {
+    overflow-y: hidden;
+    overflow-x: auto;
 }
 
 /* ----------- File navigation --------------- */
@@ -19,7 +21,7 @@ body {
     overflow: scroll;
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 12px;
     list-style-type: none;
 }
 #prjtree li {
@@ -32,7 +34,7 @@ body {
     overflow: scroll;
     margin: 0;
     padding: 0;
-    font-size: 14px;
+    font-size: 12px;
     list-style-type: none;
 }
 #filetree li {
