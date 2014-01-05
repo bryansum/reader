@@ -4,8 +4,9 @@
 
   var cm = new CodeMirror(document.body, {
     readOnly: true,
-    // cursorBlinkRate: 0,
-    mode: 'javascript'
+    lineNumbers: true,
+    dragDrop: false,
+    pollInterval: Infinity
   })
 
   var serverUrl = 'http://localhost:8080'
@@ -16,9 +17,9 @@
     xhr.open('GET', url, true)
     xhr.onload = function() {
       if (this.status === 200)
-        cb(null, this.responseText)
+        cb(null, this.responseText, xhr)
       else
-        cb('There was a problem', null)
+        cb('There was a problem', null, null)
     }
     xhr.send()
   }
@@ -36,9 +37,17 @@
 
   // ---------------- File tree --------------
 
+  function getMimeType(xhr) {
+    var header = xhr.getResponseHeader('Content-Type'),
+        ct = header ? header.split(';')[0] : ''
+    return CodeMirror.mimeModes[ct]
+  }
+
   function setCMContent(url) {
-    get(url, function(err, responseText) {
+    get(url, function(err, responseText, xhr) {
+
       if (!err) {
+        cm.setOption('mode', getMimeType(xhr))
         cm.setValue(responseText)
         document.body.scrollTop = 0
       }
@@ -85,6 +94,7 @@
         if (readme) {
           setCMContent(url + '/' + readme)
         }
+        cm.setValue('')
 
         e.preventDefault()
       }
@@ -93,7 +103,7 @@
         var li = document.createElement('li')
         var a = document.createElement('a')
         a.setAttribute('href', serverUrl + '/' + json[i].name)
-        a.setAttribute('data-readme', json[i].readme)
+        a.setAttribute('data-readme', json[i].readme.name)
         a.onclick = onclick
         a.innerHTML = json[i].name
         li.appendChild(a)
