@@ -8,15 +8,20 @@ A code reading application.
 X * Show the main file in JS mode, non-editable (README.md?)
 X * Change the font to Menlo by default
 X * Remove the blinking cursor
-* Add scope coloring support for variables (JS only for now)
+X* Move to top of file when clicking on repo
 
+X * Add node_modules, .gitignore to ignored files
+X * Add ability to filter file list (server-side)
+
+## Backlog
+* Switch from header to implementation
 * Fork CodeMirror and add modes for JS, etc. to Bower
 * Change theme to grayscale, but with comments
-* Add node_modules, .gitignore to ignored files
-* Add ability to filter file list (server-side)
+* Add scope coloring support for variables (JS only for now)
+
 * Add language stats to repo (similar to GitHub? ... use [Linguist](https://github.com/github/linguist)) -- or use [this API](http://developer.github.com/v3/repos/) -- but this only works summarizing the total Repo, not individual files.
 
-* Move to top of file when clicking on repo
+
 * Show visual file size indicator
 
 ### Add repo search
