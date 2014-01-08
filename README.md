@@ -5,6 +5,15 @@ A code reading application.
 ## Todos
 * Pull any public repository from GitHub (client-side? server-side?)
 
+* Order / prioritize file listing? (alternately, pick out important sections manually)
+* Filter directories?
+* Show visual file size indicator
+* Ward Cunningham, braces and semicolon approach (needs to be adjusted for file type)
+* Highlight surrounding references on click
+* Adjust URLs when switching file location (History API)
+
+* With symbol logging, figure out relative importance and adjust text size accordingly
+
 X * Show the main file in JS mode, non-editable (README.md?)
 X * Change the font to Menlo by default
 X * Remove the blinking cursor
@@ -21,12 +30,7 @@ X * Add ability to filter file list (server-side)
 
 * Add language stats to repo (similar to GitHub? ... use [Linguist](https://github.com/github/linguist)) -- or use [this API](http://developer.github.com/v3/repos/) -- but this only works summarizing the total Repo, not individual files.
 
-
-* Show visual file size indicator
-
-### Add repo search
 * Determine whether to use *cscope*, *ctags*, or some other system.
-
 * Add gesture-based navigation (forward / backward link navigation?)
 
 ## How to install things
